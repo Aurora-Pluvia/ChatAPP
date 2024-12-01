@@ -192,7 +192,8 @@ void CSession::HandleWrite(const boost::system::error_code& error, std::shared_p
 }
 
 //读取完整长度
-void CSession::asyncReadFull(std::size_t maxLength, std::function<void(const boost::system::error_code&, std::size_t)> handler) {
+void CSession::asyncReadFull(std::size_t maxLength, 
+	std::function<void(const boost::system::error_code&, std::size_t)> handler) {
 	::memset(_data, 0, MAX_LENGTH);
 	asyncReadLen(0, maxLength, handler);
 }
