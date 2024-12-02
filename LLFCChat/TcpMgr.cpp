@@ -1,6 +1,7 @@
 #include "tcpmgr.h"
 #include <QAbstractSocket>
 #include <QJsonDocument>
+#include "usermgr.h"
 
 TcpMgr::TcpMgr() : _host(""), _port(0), _b_recv_pending(false), _message_id(0), _message_len(0) {
 	QObject::connect(&_socket, &QTcpSocket::connected, [&]() {
@@ -96,6 +97,10 @@ void TcpMgr::initHandlers() {
 			return;
 		}
 
+        UserMgr::GetInstance()->SetUid(jsonObj["uid"].toInt());
+        UserMgr::GetInstance()->SetName(jsonObj["name"].toString());
+        UserMgr::GetInstance()->SetToken(jsonObj["token"].toString());
+
 		emit sig_swich_chatdlg();
 	});
 }
@@ -119,26 +124,28 @@ void TcpMgr::slot_tcp_connect(ServerInfo si) {
 	_socket.connectToHost(si.Host, _port);
 }
 
-void TcpMgr::slot_send_data(RegId reqId, QByteArray dataBytes) {
-	uint16_t id = reqId;
+void TcpMgr::slot_send_data(RegId reqId, QString data) {
+    uint16_t id = reqId;
 
-	// 计算长度（使用网络字节序转换）
-	quint16 len = static_cast<quint16>(dataBytes.length());
+    QByteArray dataBytes = data.toUtf8();
 
-	// 创建一个QByteArray用于存储要发送的所有数据
-	QByteArray block;
-	QDataStream out(&block, QIODevice::WriteOnly);
+    // 计算长度（使用网络字节序转换）
+    quint16 len = static_cast<quint16>(dataBytes.length());
 
-	// 设置数据流使用网络字节序
-	out.setByteOrder(QDataStream::BigEndian);
+    // 创建一个QByteArray用于存储要发送的所有数据
+    QByteArray block;
+    QDataStream out(&block, QIODevice::WriteOnly);
 
-	// 写入ID和长度
-	out << id << len;
+    // 设置数据流使用网络字节序
+    out.setByteOrder(QDataStream::BigEndian);
 
-	// 添加字符串数据
-	block.append(dataBytes);
+    // 写入ID和长度
+    out << id << len;
 
-	// 发送数据
-	_socket.write(block);
-	qDebug() << "tcp mgr send byte data is " << block;
+    // 添加字符串数据
+    block.append(dataBytes);
+
+    // 发送数据
+    _socket.write(block);
+    qDebug() << "tcp mgr send byte data is " << block;
 }

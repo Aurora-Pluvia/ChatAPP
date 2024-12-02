@@ -144,7 +144,7 @@ void CSession::AsyncReadHead(int total_len) {
 			//id非法
 			if (msg_id > MAX_LENGTH) {
 				std::cout << "invalid msg_id is " << msg_id << endl;
-				_server->ClearSession(_session_id);
+				_server->ClearSession(_session_id);/////////////////////////////_uuid
 				return;
 			}
 			short msg_len = 0;
@@ -156,7 +156,7 @@ void CSession::AsyncReadHead(int total_len) {
 			//id非法
 			if (msg_len > MAX_LENGTH) {
 				std::cout << "invalid data length is " << msg_len << endl;
-				_server->ClearSession(_session_id);
+				_server->ClearSession(_session_id);/////////////////////////////_uuid
 				return;
 			}
 

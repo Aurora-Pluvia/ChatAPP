@@ -39,9 +39,7 @@ void CServer::ClearSession(std::string uuid) {
 	//	UserMgr::GetInstance()->RmvUserSession(_sessions[uuid]->GetUserId());
 	//}
 
-	{
-		lock_guard<mutex> lock(_mutex);
-		_sessions.erase(uuid);
-	}
+	lock_guard<mutex> lock(_mutex);
+	_sessions.erase(uuid);
 	
 }
