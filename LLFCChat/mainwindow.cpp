@@ -1,6 +1,7 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "resetdialog.h"
+#include "TcpMgr.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +20,12 @@ MainWindow::MainWindow(QWidget *parent)
 
 	//连接登录界面忘记密码信号
 	connect(_login_dia, &LoginDialog::signalSwitchReset, this, &MainWindow::slotSwitchReset);
+
+    //连接创建聊天界面信号
+    connect(TcpMgr::GetInstance().get(), &TcpMgr::sig_swich_chatdlg, this, &MainWindow::slotSwitchChat);
+
+    //测试用，直接打开聊天界面
+    emit TcpMgr::GetInstance()->sig_swich_chatdlg();
 }
 
 MainWindow::~MainWindow()
@@ -89,4 +96,14 @@ void MainWindow::slotSwitchLogin2() {
 	connect(_login_dia, &LoginDialog::signalSwitchReset, this, &MainWindow::slotSwitchReset);
 	//连接登录界面注册信号
 	connect(_login_dia, &LoginDialog::signalSwitchRegister, this, &MainWindow::slotSwitchReg);
+}
+
+void MainWindow::slotSwitchChat(){
+    _chat_dia = new ChatDialog();
+    _chat_dia->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);//无边框、按钮隐藏
+    setCentralWidget(_chat_dia);
+    _login_dia->hide();
+    _chat_dia->show();
+    this->setMinimumSize(QSize(1050, 900));
+    this->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
 }

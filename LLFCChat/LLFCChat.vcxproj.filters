@@ -77,6 +77,15 @@
     <ClCompile Include="TcpMgr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="usermgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chatdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clickedbtn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h">
@@ -122,6 +131,9 @@
     <QtUic Include="resetdialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="chatdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\ice.png">
@@ -147,6 +159,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="TcpMgr.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="usermgr.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="chatdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="clickedbtn.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

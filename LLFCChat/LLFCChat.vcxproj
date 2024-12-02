@@ -203,6 +203,8 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="chatdialog.cpp" />
+    <ClCompile Include="clickedbtn.cpp" />
     <ClCompile Include="clickedlabel.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="httpmgr.cpp" />
@@ -213,9 +215,13 @@
     <ClCompile Include="resetdialog.cpp" />
     <ClCompile Include="TcpMgr.cpp" />
     <ClCompile Include="timerbtn.cpp" />
+    <ClCompile Include="usermgr.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="usermgr.h" />
     <QtMoc Include="clickedlabel.h" />
+    <QtMoc Include="chatdialog.h" />
+    <QtMoc Include="clickedbtn.h" />
     <ClInclude Include="global.h" />
     <QtMoc Include="resetdialog.h" />
     <QtMoc Include="TcpMgr.h" />
@@ -243,6 +249,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="chatdialog.ui" />
     <QtUic Include="logindialog.ui" />
     <QtUic Include="mainwindow.ui" />
     <QtUic Include="registerdialog.ui" />

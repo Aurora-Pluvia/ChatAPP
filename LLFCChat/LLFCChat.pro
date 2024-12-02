@@ -10,6 +10,8 @@ CONFIG += c++17
 
 SOURCES += \
     TcpMgr.cpp \
+    chatdialog.cpp \
+    clickedbtn.cpp \
     clickedlabel.cpp \
     global.cpp \
     httpmgr.cpp \
@@ -23,6 +25,8 @@ SOURCES += \
 
 HEADERS += \
     TcpMgr.h \
+    chatdialog.h \
+    clickedbtn.h \
     clickedlabel.h \
     global.h \
     httpmgr.h \
@@ -35,6 +39,7 @@ HEADERS += \
     usermgr.h
 
 FORMS += \
+    chatdialog.ui \
     logindialog.ui \
     mainwindow.ui \
     registerdialog.ui \
