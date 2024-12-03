@@ -204,10 +204,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="chatdialog.cpp" />
+    <ClCompile Include="chatpage.cpp" />
+    <ClCompile Include="chatuserlist.cpp" />
+    <ClCompile Include="chatuserwid.cpp" />
     <ClCompile Include="clickedbtn.cpp" />
     <ClCompile Include="clickedlabel.cpp" />
+    <ClCompile Include="CustomizeEdit.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="httpmgr.cpp" />
+    <ClCompile Include="listitembase.cpp" />
+    <ClCompile Include="loadingdlg.cpp" />
     <ClCompile Include="logindialog.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
@@ -222,9 +228,15 @@
     <QtMoc Include="clickedlabel.h" />
     <QtMoc Include="chatdialog.h" />
     <QtMoc Include="clickedbtn.h" />
+    <QtMoc Include="CustomizeEdit.h" />
+    <QtMoc Include="chatuserlist.h" />
+    <QtMoc Include="chatuserwid.h" />
+    <QtMoc Include="chatpage.h" />
     <ClInclude Include="global.h" />
     <QtMoc Include="resetdialog.h" />
     <QtMoc Include="TcpMgr.h" />
+    <QtMoc Include="listitembase.h" />
+    <QtMoc Include="loadingdlg.h" />
     <ClInclude Include="timerbtn.h" />
     <QtMoc Include="httpmgr.h" />
     <QtMoc Include="logindialog.h" />
@@ -250,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="chatdialog.ui" />
+    <QtUic Include="chatpage.ui" />
+    <QtUic Include="chatuserwid.ui" />
+    <QtUic Include="loadingdlg.ui" />
     <QtUic Include="logindialog.ui" />
     <QtUic Include="mainwindow.ui" />
     <QtUic Include="registerdialog.ui" />
