@@ -14,12 +14,12 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <clickedbtn.h>
 #include "chatview.h"
 #include "clickedlabel.h"
+#include "messagetextedit.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -42,7 +42,7 @@ public:
     QSpacerItem *horizontalSpacer_2;
     ClickedLabel *file_lb;
     QSpacerItem *horizontalSpacer_4;
-    QTextEdit *chatEdit;
+    MessageTextEdit *chatEdit;
     QWidget *send_wid;
     QHBoxLayout *horizontalLayout_5;
     QSpacerItem *horizontalSpacer_5;
@@ -133,7 +133,7 @@ public:
 
         verticalLayout_4->addWidget(tool_wid);
 
-        chatEdit = new QTextEdit(chat_data_wid);
+        chatEdit = new MessageTextEdit(chat_data_wid);
         chatEdit->setObjectName("chatEdit");
         chatEdit->setMinimumSize(QSize(0, 150));
         chatEdit->setMaximumSize(QSize(16777215, 150));

@@ -107,6 +107,21 @@
     <ClCompile Include="chatview.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="chatitembase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bubbleframe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="textbubble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="picturebubble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="messagetextedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h">
@@ -219,6 +234,21 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="chatview.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="chatitembase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="bubbleframe.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="textbubble.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="picturebubble.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="messagetextedit.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -203,7 +203,9 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bubbleframe.cpp" />
     <ClCompile Include="chatdialog.cpp" />
+    <ClCompile Include="chatitembase.cpp" />
     <ClCompile Include="chatpage.cpp" />
     <ClCompile Include="chatuserlist.cpp" />
     <ClCompile Include="chatuserwid.cpp" />
@@ -218,9 +220,12 @@
     <ClCompile Include="logindialog.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="messagetextedit.cpp" />
+    <ClCompile Include="picturebubble.cpp" />
     <ClCompile Include="registerdialog.cpp" />
     <ClCompile Include="resetdialog.cpp" />
     <ClCompile Include="TcpMgr.cpp" />
+    <ClCompile Include="textbubble.cpp" />
     <ClCompile Include="timerbtn.cpp" />
     <ClCompile Include="usermgr.cpp" />
   </ItemGroup>
@@ -234,11 +239,16 @@
     <QtMoc Include="chatuserwid.h" />
     <QtMoc Include="chatpage.h" />
     <QtMoc Include="chatview.h" />
+    <QtMoc Include="chatitembase.h" />
+    <QtMoc Include="bubbleframe.h" />
     <ClInclude Include="global.h" />
     <QtMoc Include="resetdialog.h" />
     <QtMoc Include="TcpMgr.h" />
     <QtMoc Include="listitembase.h" />
     <QtMoc Include="loadingdlg.h" />
+    <QtMoc Include="textbubble.h" />
+    <QtMoc Include="picturebubble.h" />
+    <QtMoc Include="messagetextedit.h" />
     <ClInclude Include="timerbtn.h" />
     <QtMoc Include="httpmgr.h" />
     <QtMoc Include="logindialog.h" />

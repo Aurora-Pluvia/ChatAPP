@@ -11,7 +11,9 @@ CONFIG += c++17
 SOURCES += \
     CustomizeEdit.cpp \
     TcpMgr.cpp \
+    bubbleframe.cpp \
     chatdialog.cpp \
+    chatitembase.cpp \
     chatpage.cpp \
     chatuserlist.cpp \
     chatuserwid.cpp \
@@ -25,15 +27,20 @@ SOURCES += \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    messagetextedit.cpp \
+    picturebubble.cpp \
     registerdialog.cpp \
     resetdialog.cpp \
+    textbubble.cpp \
     timerbtn.cpp \
     usermgr.cpp
 
 HEADERS += \
     CustomizeEdit.h \
     TcpMgr.h \
+    bubbleframe.h \
     chatdialog.h \
+    chatitembase.h \
     chatpage.h \
     chatuserlist.h \
     chatuserwid.h \
@@ -46,9 +53,12 @@ HEADERS += \
     loadingdlg.h \
     logindialog.h \
     mainwindow.h \
+    messagetextedit.h \
+    picturebubble.h \
     registerdialog.h \
     resetdialog.h \
     singleton.h \
+    textbubble.h \
     timerbtn.h \
     usermgr.h
 

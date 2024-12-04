@@ -24,6 +24,9 @@ public:
     ~ChatPage();
 protected:
     void paintEvent(QPaintEvent* event);//绘制样式
+private slots:
+    void on_send_btn_clicked();
+
 private:
     Ui::ChatPage *ui;
 };
