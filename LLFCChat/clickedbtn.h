@@ -2,7 +2,15 @@
 #define CLICKEDBTN_H
 
 #include <QPushButton>
-
+/******************************************************************************
+ *
+ * @file       clickedbtn.h
+ * @brief      自定义可点击按钮
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 class ClickedBtn : public QPushButton
 {
     Q_OBJECT

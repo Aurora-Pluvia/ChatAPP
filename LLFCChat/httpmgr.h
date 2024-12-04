@@ -9,7 +9,15 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 
-
+/******************************************************************************
+ *
+ * @file       httpmgr.h
+ * @brief      收发http请求
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 //CRTP
 class HttpMgr : public QObject, public Singleton<HttpMgr>, 
     public std::enable_shared_from_this<HttpMgr>

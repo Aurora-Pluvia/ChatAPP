@@ -2,7 +2,15 @@
 #define SINGLETON_H
 #include "global.h"
 
-//单例模式
+/******************************************************************************
+ *
+ * @file       singleton.h
+ * @brief      单例模式
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 template <typename T>
 class Singleton{
 protected://不允许外部访问，但允许子类调用构造

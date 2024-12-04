@@ -3,7 +3,15 @@
 
 #include <QPushButton>
 #include <QTimer>
-
+/******************************************************************************
+ *
+ * @file       timerbtn.h
+ * @brief      按钮点击后进入不可用状态并倒计时
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 class TimerBtn : public QPushButton {
 public:
 	TimerBtn(QWidget* parent = nullptr);

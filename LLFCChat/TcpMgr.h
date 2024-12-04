@@ -6,7 +6,15 @@
 #include <functional>
 #include <QObject>
 #include <QJsonArray>
-
+/******************************************************************************
+ *
+ * @file       TcpMgr.h
+ * @brief      用于与chatserver建立tcp长连接
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 class TcpMgr : public QObject, public Singleton<TcpMgr>, 
 	public std::enable_shared_from_this<TcpMgr> {
 	Q_OBJECT

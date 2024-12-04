@@ -3,6 +3,15 @@
 #include <QObject>
 #include <memory>
 #include <singleton.h>
+/******************************************************************************
+ *
+ * @file       usermgr.h
+ * @brief      管理用户
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 class UserMgr:public QObject,public Singleton<UserMgr>,
         public std::enable_shared_from_this<UserMgr>
 {

@@ -1,6 +1,16 @@
 #pragma once
 #include <QLineEdit>
 #include <QDebug>
+
+/******************************************************************************
+ *
+ * @file       CustomizeEdit.h
+ * @brief      自定义输入框
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 class CustomizeEdit : public QLineEdit {
 	Q_OBJECT
 public:

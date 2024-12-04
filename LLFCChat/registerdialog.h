@@ -3,7 +3,15 @@
 
 #include <QDialog>
 #include "global.h"
-
+/******************************************************************************
+ *
+ * @file       registerdialog.h
+ * @brief      注册窗口
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 namespace Ui {
 class RegisterDialog;
 }

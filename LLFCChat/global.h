@@ -14,7 +14,15 @@
 #include <QStringConverter>
 #include <QDir>
 #include <QSettings>
-
+/******************************************************************************
+ *
+ * @file       global.h
+ * @brief      全局变量
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 /**
  * @brief repolish 用于刷新qss
  */

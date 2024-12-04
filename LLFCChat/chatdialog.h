@@ -3,7 +3,15 @@
 
 #include <QDialog>
 #include "global.h"
-
+/******************************************************************************
+ *
+ * @file       chatdialog.h
+ * @brief      聊天窗口
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 namespace Ui {
 class ChatDialog;
 }

@@ -6,7 +6,15 @@
 #include <QScrollBar>
 #include <QDebug>
 #include <QObject>
-
+/******************************************************************************
+ *
+ * @file       chatuserlist.h
+ * @brief      聊天用户列表
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 class ChatUserList : public QListWidget {
 	Q_OBJECT
 public:

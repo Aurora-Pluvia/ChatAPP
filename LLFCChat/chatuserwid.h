@@ -2,7 +2,15 @@
 #define CHATUSERWID_H
 
 #include "listitembase.h"
-
+/******************************************************************************
+ *
+ * @file       chatuserwid.h
+ * @brief      单个聊天用户item
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 namespace Ui {
 class ChatUserWid;
 }

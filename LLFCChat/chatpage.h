@@ -2,7 +2,15 @@
 #define CHATPAGE_H
 
 #include <QWidget>
-
+/******************************************************************************
+ *
+ * @file       chatpage.h
+ * @brief      聊天界面的页面绘制
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 namespace Ui {
 class ChatPage;
 }

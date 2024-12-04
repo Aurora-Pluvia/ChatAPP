@@ -3,7 +3,15 @@
 
 #include <QLabel>
 #include "global.h"
-
+/******************************************************************************
+ *
+ * @file       clickedlabel.h
+ * @brief      自定义可点击图标
+ *
+ * @author     Carpe_Diem
+ * @date       2024/12/04
+ * @history
+ *****************************************************************************/
 class ClickedLabel : public QLabel
 {
     Q_OBJECT
