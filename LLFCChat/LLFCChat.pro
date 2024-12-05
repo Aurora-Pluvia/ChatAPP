@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     CustomizeEdit.cpp \
     TcpMgr.cpp \
+    adduseritem.cpp \
     bubbleframe.cpp \
     chatdialog.cpp \
     chatitembase.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
     chatview.cpp \
     clickedbtn.cpp \
     clickedlabel.cpp \
+    findsuccessdlg.cpp \
     global.cpp \
     httpmgr.cpp \
     listitembase.cpp \
@@ -31,13 +33,17 @@ SOURCES += \
     picturebubble.cpp \
     registerdialog.cpp \
     resetdialog.cpp \
+    searchlist.cpp \
+    statewidget.cpp \
     textbubble.cpp \
     timerbtn.cpp \
+    userdata.cpp \
     usermgr.cpp
 
 HEADERS += \
     CustomizeEdit.h \
     TcpMgr.h \
+    adduseritem.h \
     bubbleframe.h \
     chatdialog.h \
     chatitembase.h \
@@ -47,6 +53,7 @@ HEADERS += \
     chatview.h \
     clickedbtn.h \
     clickedlabel.h \
+    findsuccessdlg.h \
     global.h \
     httpmgr.h \
     listitembase.h \
@@ -57,15 +64,20 @@ HEADERS += \
     picturebubble.h \
     registerdialog.h \
     resetdialog.h \
+    searchlist.h \
     singleton.h \
+    statewidget.h \
     textbubble.h \
     timerbtn.h \
+    userdata.h \
     usermgr.h
 
 FORMS += \
+    adduseritem.ui \
     chatdialog.ui \
     chatpage.ui \
     chatuserwid.ui \
+    findsuccessdlg.ui \
     loadingdlg.ui \
     logindialog.ui \
     mainwindow.ui \

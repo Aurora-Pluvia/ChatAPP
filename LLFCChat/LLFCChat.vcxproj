@@ -203,6 +203,7 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="adduseritem.cpp" />
     <ClCompile Include="bubbleframe.cpp" />
     <ClCompile Include="chatdialog.cpp" />
     <ClCompile Include="chatitembase.cpp" />
@@ -213,6 +214,7 @@
     <ClCompile Include="clickedbtn.cpp" />
     <ClCompile Include="clickedlabel.cpp" />
     <ClCompile Include="CustomizeEdit.cpp" />
+    <ClCompile Include="findsuccessdlg.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="httpmgr.cpp" />
     <ClCompile Include="listitembase.cpp" />
@@ -224,12 +226,18 @@
     <ClCompile Include="picturebubble.cpp" />
     <ClCompile Include="registerdialog.cpp" />
     <ClCompile Include="resetdialog.cpp" />
+    <ClCompile Include="searchlist.cpp" />
+    <ClCompile Include="statewidget.cpp" />
     <ClCompile Include="TcpMgr.cpp" />
     <ClCompile Include="textbubble.cpp" />
     <ClCompile Include="timerbtn.cpp" />
+    <ClCompile Include="userdata.cpp" />
     <ClCompile Include="usermgr.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="adduseritem.h" />
+    <QtMoc Include="findsuccessdlg.h" />
+    <ClInclude Include="userdata.h" />
     <QtMoc Include="usermgr.h" />
     <QtMoc Include="clickedlabel.h" />
     <QtMoc Include="chatdialog.h" />
@@ -249,6 +257,8 @@
     <QtMoc Include="textbubble.h" />
     <QtMoc Include="picturebubble.h" />
     <QtMoc Include="messagetextedit.h" />
+    <QtMoc Include="statewidget.h" />
+    <QtMoc Include="searchlist.h" />
     <ClInclude Include="timerbtn.h" />
     <QtMoc Include="httpmgr.h" />
     <QtMoc Include="logindialog.h" />
@@ -273,9 +283,11 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="adduseritem.ui" />
     <QtUic Include="chatdialog.ui" />
     <QtUic Include="chatpage.ui" />
     <QtUic Include="chatuserwid.ui" />
+    <QtUic Include="findsuccessdlg.ui" />
     <QtUic Include="loadingdlg.ui" />
     <QtUic Include="logindialog.ui" />
     <QtUic Include="mainwindow.ui" />

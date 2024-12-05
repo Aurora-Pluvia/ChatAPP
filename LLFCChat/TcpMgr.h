@@ -6,6 +6,7 @@
 #include <functional>
 #include <QObject>
 #include <QJsonArray>
+#include "userdata.h"
 /******************************************************************************
  *
  * @file       TcpMgr.h
@@ -41,6 +42,7 @@ signals:
 	void sig_send_data(RegId reqId, QByteArray data);
 	void sig_swich_chatdlg();
 	void sig_login_failed(int);
+	void sig_user_search(std::shared_ptr<SearchInfo>);
 };
 
 #endif // TCPMGR_H

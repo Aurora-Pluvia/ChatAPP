@@ -22,7 +22,9 @@
 #include <QtWidgets/QWidget>
 #include <chatuserlist.h>
 #include <clickedbtn.h>
+#include <statewidget.h>
 #include "chatpage.h"
+#include "searchlist.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -34,9 +36,9 @@ public:
     QVBoxLayout *verticalLayout;
     QWidget *widget;
     QVBoxLayout *verticalLayout_3;
-    QLabel *side_chat_lb;
-    QLabel *side_contact_lb;
     QLabel *side_head_lb;
+    StateWidget *side_chat_lb;
+    StateWidget *side_contact_lb;
     QSpacerItem *verticalSpacer;
     QWidget *chat_user_wid;
     QVBoxLayout *verticalLayout_2;
@@ -46,7 +48,7 @@ public:
     QSpacerItem *horizontalSpacer;
     ClickedBtn *add_btn;
     ChatUserList *chat_user_list;
-    QListWidget *search_list;
+    SearchList *search_list;
     QListWidget *con_user_list;
     QStackedWidget *stackedWidget;
     ChatPage *chat_page;
@@ -80,26 +82,26 @@ public:
         verticalLayout_3->setSpacing(30);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        side_chat_lb = new QLabel(widget);
+        side_head_lb = new QLabel(widget);
+        side_head_lb->setObjectName("side_head_lb");
+        side_head_lb->setMinimumSize(QSize(35, 35));
+        side_head_lb->setMaximumSize(QSize(35, 35));
+
+        verticalLayout_3->addWidget(side_head_lb);
+
+        side_chat_lb = new StateWidget(widget);
         side_chat_lb->setObjectName("side_chat_lb");
         side_chat_lb->setMinimumSize(QSize(30, 30));
         side_chat_lb->setMaximumSize(QSize(30, 30));
 
         verticalLayout_3->addWidget(side_chat_lb);
 
-        side_contact_lb = new QLabel(widget);
+        side_contact_lb = new StateWidget(widget);
         side_contact_lb->setObjectName("side_contact_lb");
         side_contact_lb->setMinimumSize(QSize(30, 30));
         side_contact_lb->setMaximumSize(QSize(30, 30));
 
         verticalLayout_3->addWidget(side_contact_lb);
-
-        side_head_lb = new QLabel(widget);
-        side_head_lb->setObjectName("side_head_lb");
-        side_head_lb->setMinimumSize(QSize(30, 30));
-        side_head_lb->setMaximumSize(QSize(30, 30));
-
-        verticalLayout_3->addWidget(side_head_lb);
 
 
         verticalLayout->addWidget(widget);
@@ -148,7 +150,7 @@ public:
 
         verticalLayout_2->addWidget(chat_user_list);
 
-        search_list = new QListWidget(chat_user_wid);
+        search_list = new SearchList(chat_user_wid);
         search_list->setObjectName("search_list");
 
         verticalLayout_2->addWidget(search_list);
@@ -184,8 +186,6 @@ public:
     void retranslateUi(QDialog *ChatDialog)
     {
         ChatDialog->setWindowTitle(QCoreApplication::translate("ChatDialog", "Dialog", nullptr));
-        side_chat_lb->setText(QString());
-        side_contact_lb->setText(QString());
         side_head_lb->setText(QString());
         add_btn->setText(QString());
     } // retranslateUi

@@ -122,6 +122,21 @@
     <ClCompile Include="messagetextedit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="statewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="searchlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="adduseritem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="findsuccessdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h">
@@ -143,6 +158,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="timerbtn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userdata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -177,6 +195,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="chatpage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="adduseritem.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="findsuccessdlg.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -249,6 +273,18 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="messagetextedit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="statewidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="searchlist.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="adduseritem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="findsuccessdlg.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
