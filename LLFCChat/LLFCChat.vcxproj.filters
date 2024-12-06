@@ -137,6 +137,15 @@
     <ClCompile Include="findsuccessdlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="applyfriend.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clickedoncelabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="friendlabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h">
@@ -201,6 +210,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="findsuccessdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="applyfriend.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="friendlabel.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -285,6 +300,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="findsuccessdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="applyfriend.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="clickedoncelabel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="friendlabel.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

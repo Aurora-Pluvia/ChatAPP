@@ -15,9 +15,9 @@ class ListItemBase : public QWidget {
 public:
 	explicit ListItemBase(QWidget* parent = nullptr);
 	void SetItemType(ListItemType itemType);
+	ListItemType GetItemType();
 protected:
 	virtual void paintEvent(QPaintEvent* event) override;
-	ListItemType GetItemType();
 private:
 	ListItemType _itemType;
 };

@@ -21,6 +21,14 @@ void UserMgr::SetUid(int uid)
     _uid = uid;
 }
 
+int UserMgr::GetUid() {
+    return _uid;
+}
+
+QString UserMgr::GetName() {
+    return _name;
+}
+
 UserMgr::UserMgr()
 {
 

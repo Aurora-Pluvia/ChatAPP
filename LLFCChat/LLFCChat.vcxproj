@@ -204,6 +204,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="adduseritem.cpp" />
+    <ClCompile Include="applyfriend.cpp" />
     <ClCompile Include="bubbleframe.cpp" />
     <ClCompile Include="chatdialog.cpp" />
     <ClCompile Include="chatitembase.cpp" />
@@ -213,8 +214,10 @@
     <ClCompile Include="chatview.cpp" />
     <ClCompile Include="clickedbtn.cpp" />
     <ClCompile Include="clickedlabel.cpp" />
+    <ClCompile Include="clickedoncelabel.cpp" />
     <ClCompile Include="CustomizeEdit.cpp" />
     <ClCompile Include="findsuccessdlg.cpp" />
+    <ClCompile Include="friendlabel.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="httpmgr.cpp" />
     <ClCompile Include="listitembase.cpp" />
@@ -237,6 +240,9 @@
   <ItemGroup>
     <QtMoc Include="adduseritem.h" />
     <QtMoc Include="findsuccessdlg.h" />
+    <QtMoc Include="applyfriend.h" />
+    <QtMoc Include="clickedoncelabel.h" />
+    <QtMoc Include="friendlabel.h" />
     <ClInclude Include="userdata.h" />
     <QtMoc Include="usermgr.h" />
     <QtMoc Include="clickedlabel.h" />
@@ -284,10 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="adduseritem.ui" />
+    <QtUic Include="applyfriend.ui" />
     <QtUic Include="chatdialog.ui" />
     <QtUic Include="chatpage.ui" />
     <QtUic Include="chatuserwid.ui" />
     <QtUic Include="findsuccessdlg.ui" />
+    <QtUic Include="friendlabel.ui" />
     <QtUic Include="loadingdlg.ui" />
     <QtUic Include="logindialog.ui" />
     <QtUic Include="mainwindow.ui" />

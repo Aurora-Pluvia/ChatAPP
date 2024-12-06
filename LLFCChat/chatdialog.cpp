@@ -156,7 +156,8 @@ void ChatDialog::handleGlobalMousePress(QMouseEvent* event) {
 	}
 
 	// 将鼠标点击位置转换为搜索列表坐标系中的位置
-	QPoint posInSearchList = ui->search_list->mapFromGlobal(event->globalPos());
+    //QPoint posInSearchList = ui->search_list->mapFromGlobal(event->globalPos());
+    QPoint posInSearchList =(ui->search_list->mapFromGlobal(event->globalPosition())).toPoint();
 	// 判断点击位置是否在聊天列表的范围内
 	if (!ui->search_list->rect().contains(posInSearchList)) {
 		// 如果不在聊天列表内，清空输入框

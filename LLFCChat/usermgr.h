@@ -22,7 +22,8 @@ public:
     void SetToken(QString token);
     void SetName(QString name);
     void SetUid(int uid);
-
+    int GetUid();
+    QString GetName();
 private:
     UserMgr();
     QString _name;
