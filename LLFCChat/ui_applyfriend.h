@@ -35,7 +35,7 @@ public:
     QLabel *apply_lb;
     QWidget *apply_wid;
     QVBoxLayout *verticalLayout_3;
-    QFrame *line;
+    QFrame *h_line;
     QLabel *label;
     CustomizeEdit *name_ed;
     QLabel *label_2;
@@ -100,12 +100,12 @@ public:
         apply_wid->setObjectName("apply_wid");
         verticalLayout_3 = new QVBoxLayout(apply_wid);
         verticalLayout_3->setObjectName("verticalLayout_3");
-        line = new QFrame(apply_wid);
-        line->setObjectName("line");
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
+        h_line = new QFrame(apply_wid);
+        h_line->setObjectName("h_line");
+        h_line->setFrameShape(QFrame::HLine);
+        h_line->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout_3->addWidget(line);
+        verticalLayout_3->addWidget(h_line);
 
         label = new QLabel(apply_wid);
         label->setObjectName("label");

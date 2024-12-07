@@ -205,6 +205,9 @@
   <ItemGroup>
     <ClCompile Include="adduseritem.cpp" />
     <ClCompile Include="applyfriend.cpp" />
+    <ClCompile Include="applyfrienditem.cpp" />
+    <ClCompile Include="applyfriendlist.cpp" />
+    <ClCompile Include="applyfriendpage.cpp" />
     <ClCompile Include="bubbleframe.cpp" />
     <ClCompile Include="chatdialog.cpp" />
     <ClCompile Include="chatitembase.cpp" />
@@ -215,10 +218,13 @@
     <ClCompile Include="clickedbtn.cpp" />
     <ClCompile Include="clickedlabel.cpp" />
     <ClCompile Include="clickedoncelabel.cpp" />
+    <ClCompile Include="contactuserlist.cpp" />
+    <ClCompile Include="conuseritem.cpp" />
     <ClCompile Include="CustomizeEdit.cpp" />
     <ClCompile Include="findsuccessdlg.cpp" />
     <ClCompile Include="friendlabel.cpp" />
     <ClCompile Include="global.cpp" />
+    <ClCompile Include="grouptipitem.cpp" />
     <ClCompile Include="httpmgr.cpp" />
     <ClCompile Include="listitembase.cpp" />
     <ClCompile Include="loadingdlg.cpp" />
@@ -243,6 +249,12 @@
     <QtMoc Include="applyfriend.h" />
     <QtMoc Include="clickedoncelabel.h" />
     <QtMoc Include="friendlabel.h" />
+    <QtMoc Include="contactuserlist.h" />
+    <QtMoc Include="conuseritem.h" />
+    <QtMoc Include="grouptipitem.h" />
+    <QtMoc Include="applyfriendpage.h" />
+    <QtMoc Include="applyfrienditem.h" />
+    <QtMoc Include="applyfriendlist.h" />
     <ClInclude Include="userdata.h" />
     <QtMoc Include="usermgr.h" />
     <QtMoc Include="clickedlabel.h" />
@@ -291,11 +303,15 @@
   <ItemGroup>
     <QtUic Include="adduseritem.ui" />
     <QtUic Include="applyfriend.ui" />
+    <QtUic Include="applyfrienditem.ui" />
+    <QtUic Include="applyfriendpage.ui" />
     <QtUic Include="chatdialog.ui" />
     <QtUic Include="chatpage.ui" />
     <QtUic Include="chatuserwid.ui" />
+    <QtUic Include="conuseritem.ui" />
     <QtUic Include="findsuccessdlg.ui" />
     <QtUic Include="friendlabel.ui" />
+    <QtUic Include="grouptipitem.ui" />
     <QtUic Include="loadingdlg.ui" />
     <QtUic Include="logindialog.ui" />
     <QtUic Include="mainwindow.ui" />

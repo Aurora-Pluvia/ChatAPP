@@ -3,6 +3,8 @@
 #include <QObject>
 #include <memory>
 #include <singleton.h>
+#include "userdata.h"
+#include <vector>
 /******************************************************************************
  *
  * @file       usermgr.h
@@ -24,11 +26,14 @@ public:
     void SetUid(int uid);
     int GetUid();
     QString GetName();
+	std::vector<std::shared_ptr<ApplyInfo>> GetApplyList();
+
 private:
     UserMgr();
     QString _name;
     QString _token;
     int _uid;
+	std::vector<std::shared_ptr<ApplyInfo>> _apply_list;
 
 };
 

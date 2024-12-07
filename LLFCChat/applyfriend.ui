@@ -100,7 +100,7 @@
         <widget class="QWidget" name="apply_wid" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="Line" name="line">
+           <widget class="Line" name="h_line">
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
             </property>

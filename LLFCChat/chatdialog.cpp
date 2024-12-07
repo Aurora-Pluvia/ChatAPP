@@ -87,32 +87,6 @@ ChatDialog::~ChatDialog() {
 	delete ui;
 }
 
-//测试用临时数据
-std::vector<QString> strs = { "hello world!",
-"nice to meet you",
-"New year, new life",
-"You have to love yourself",
-"My love is written in the ever since this whole world is you" };
-
-std::vector<QString> heads = {
-	":/res/head_1.jpg",
-	":/res/head_2.jpg",
-	":/res/head_3.jpg",
-	":/res/head_4.jpg",
-	":/res/head_5.jpg"
-};
-
-std::vector<QString> names = {
-	"llfc",
-	"zack",
-	"golang",
-	"cpp",
-	"java",
-	"nodejs",
-	"python",
-	"rust"
-};
-
 void ChatDialog::addChatUserList() {
 	//创建QListWidgetItem，并设置自定义的widget
 	for (int i = 0; i < 13; i++) {

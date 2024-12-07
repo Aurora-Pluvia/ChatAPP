@@ -7,9 +7,8 @@
 #include "tcpmgr.h"
 #include <QJsonDocument>
 
-ApplyFriend::ApplyFriend(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::ApplyFriend), _label_point(2, 6) {
+ApplyFriend::ApplyFriend(QWidget* parent) 
+	: QDialog(parent), ui(new Ui::ApplyFriend), _label_point(2, 6) {
 	ui->setupUi(this);
 	// 隐藏对话框标题栏
 	setWindowFlags(windowFlags() | Qt::FramelessWindowHint);
@@ -269,52 +268,51 @@ void ApplyFriend::SlotLabelEnter() {
 
 	ui->input_tip_wid->hide();
 
-	//auto find_it = std::find(_tip_data.begin(), _tip_data.end(), text);
-	////找到了就只需设置状态为选中即可
-	//if (find_it == _tip_data.end()) {
-	//	_tip_data.push_back(text);
-	//}
+	//在已有的标签中查找
+	auto find_it = std::find(_tip_data.begin(), _tip_data.end(), text);
+	//找到了就只需设置状态为选中即可
+	if (find_it == _tip_data.end()) {
+		_tip_data.push_back(text);
+	}
 
-	////判断标签展示栏是否有该标签
-	//auto find_add = _add_labels.find(text);
-	//if (find_add != _add_labels.end()) {
-	//	find_add.value()->SetCurState(ClickLbState::Selected);
-	//	return;
-	//}
+	//判断标签展示栏是否有该标签
+	auto find_add = _add_labels.find(text);
+	if (find_add != _add_labels.end()) {
+		find_add.value()->SetCurState(ClickLbState::Selected);
+		return;
+	}
 
-	////标签展示栏也增加一个标签, 并设置绿色选中
-	//auto* lb = new ClickedLabel(ui->lb_list);
-	//lb->SetState("normal", "hover", "pressed", "selected_normal",
-	//	"selected_hover", "selected_pressed");
-	//lb->setObjectName("tipslb");
-	//lb->setText(text);
-	//connect(lb, &ClickedLabel::clicked, this, &ApplyFriend::SlotChangeFriendLabelByTip);
-	//qDebug() << "ui->lb_list->width() is " << ui->lb_list->width();
-	//qDebug() << "_tip_cur_point.x() is " << _tip_cur_point.x();
+	//标签展示栏也增加一个标签, 并设置绿色选中
+	auto* lb = new ClickedLabel(ui->lb_list);
+	lb->SetState("normal", "hover", "pressed", "selected_normal",
+		"selected_hover", "selected_pressed");
+	lb->setObjectName("tipslb");
+	lb->setText(text);
+	connect(lb, &ClickedLabel::clicked, this, &ApplyFriend::SlotChangeFriendLabelByTip);
+	qDebug() << "ui->lb_list->width() is " << ui->lb_list->width();
+	qDebug() << "_tip_cur_point.x() is " << _tip_cur_point.x();
 
-	//QFontMetrics fontMetrics(lb->font()); // 获取QLabel控件的字体信息
-	//int textWidth = fontMetrics.horizontalAdvance(lb->text()); // 获取文本的宽度
-	//int textHeight = fontMetrics.height(); // 获取文本的高度
-	//qDebug() << "textWidth is " << textWidth;
+	QFontMetrics fontMetrics(lb->font()); // 获取QLabel控件的字体信息
+	int textWidth = fontMetrics.horizontalAdvance(lb->text()); // 获取文本的宽度
+	int textHeight = fontMetrics.height(); // 获取文本的高度
+	qDebug() << "textWidth is " << textWidth;
 
-	//if (_tip_cur_point.x() + textWidth + tip_offset + 3 > ui->lb_list->width()) {
+	if (_tip_cur_point.x() + textWidth + tip_offset + 3 > ui->lb_list->width()) {
+		_tip_cur_point.setX(5);
+		_tip_cur_point.setY(_tip_cur_point.y() + textHeight + 15);
+	}
 
-	//	_tip_cur_point.setX(5);
-	//	_tip_cur_point.setY(_tip_cur_point.y() + textHeight + 15);
+	auto next_point = _tip_cur_point;
 
-	//}
+	AddTipLbs(lb, _tip_cur_point, next_point, textWidth, textHeight);
+	_tip_cur_point = next_point;
 
-	//auto next_point = _tip_cur_point;
+	int diff_height = next_point.y() + textHeight + tip_offset - ui->lb_list->height();
+	ui->lb_list->setFixedHeight(next_point.y() + textHeight + tip_offset);//扩充高度
 
-	//AddTipLbs(lb, _tip_cur_point, next_point, textWidth, textHeight);
-	//_tip_cur_point = next_point;
+	lb->SetCurState(ClickLbState::Selected);
 
-	//int diff_height = next_point.y() + textHeight + tip_offset - ui->lb_list->height();
-	//ui->lb_list->setFixedHeight(next_point.y() + textHeight + tip_offset);
-
-	//lb->SetCurState(ClickLbState::Selected);
-
-	//ui->scrollcontent->setFixedHeight(ui->scrollcontent->height() + diff_height);
+	ui->scrollcontent->setFixedHeight(ui->scrollcontent->height() + diff_height);
 }
 
 void ApplyFriend::SlotRemoveFriendLabel(QString name) {
@@ -457,7 +455,6 @@ void ApplyFriend::SlotAddFirendLabelByClickTip(QString text) {
 
 void ApplyFriend::SlotApplySure() {
 	qDebug() << "Slot Apply Sure called";
-	//qDebug() << "Slot Apply Sure called";
 	////发送请求逻辑
 	//QJsonObject jsonObj;
 	//auto uid = UserMgr::GetInstance()->GetUid();
@@ -482,8 +479,8 @@ void ApplyFriend::SlotApplySure() {
 
 	////发送tcp请求给chat server
 	//emit TcpMgr::GetInstance()->sig_send_data(RegId::ID_ADD_FRIEND_REQ, jsonData);
-	//this->hide();
-	//deleteLater();
+	this->hide();
+	deleteLater();
 }
 
 void ApplyFriend::SlotApplyCancel() {
