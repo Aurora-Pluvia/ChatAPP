@@ -30,20 +30,7 @@ StatusServiceImpl::StatusServiceImpl()
 {
 	auto& cfg = ConfigMgr::Inst();
 
-	ChatServer server;
-	server.port = cfg["ChatServer1"]["Port"];
-	server.host = cfg["ChatServer1"]["Host"];
-	server.name = cfg["ChatServer1"]["Name"];
-	server.con_count = 0;
-	_servers[server.name] = server;
-
-	server.port = cfg["ChatServer2"]["Port"];
-	server.host = cfg["ChatServer2"]["Host"];
-	server.name = cfg["ChatServer2"]["Name"];
-	server.con_count = 0;
-	_servers[server.name] = server;
-
-	/*auto server_list = cfg["chatservers"]["Name"];
+	auto server_list = cfg["chatservers"]["Name"];
 
 	std::vector<std::string> words;
 
@@ -64,27 +51,27 @@ StatusServiceImpl::StatusServiceImpl()
 		server.host = cfg[word]["Host"];
 		server.name = cfg[word]["Name"];
 		_servers[server.name] = server;
-	}*/
+	}
 
 }
 
 ChatServer StatusServiceImpl::getChatServer() {
 	std::lock_guard<std::mutex> guard(_server_mtx);
 	auto minServer = _servers.begin()->second;
-	//auto count_str = RedisMgr::GetInstance()->HGet(LOGIN_COUNT, minServer.name);
-	//if (count_str.empty()) {
-	//	//不存在则默认设置为最大
-	//	minServer.con_count = INT_MAX;
-	//}
-	//else {
-	//	minServer.con_count = std::stoi(count_str);
-	//}
+	auto count_str = RedisMgr::GetInstance()->HGet(LOGIN_COUNT, minServer.name);
+	if (count_str.empty()) {
+		//不存在则默认设置为最大
+		minServer.con_count = INT_MAX;
+	}
+	else {
+		minServer.con_count = std::stoi(count_str);
+	}
 
 
 	// 使用范围基于for循环
 	for ( auto& server : _servers) {
 		
-		/*if (server.second.name == minServer.name) {
+		if (server.second.name == minServer.name) {
 			continue;
 		}
 
@@ -94,13 +81,12 @@ ChatServer StatusServiceImpl::getChatServer() {
 		}
 		else {
 			server.second.con_count = std::stoi(count_str);
-		}*/
+		}
 
 		if (server.second.con_count < minServer.con_count) {
 			minServer = server.second;
 		}
 	}
-
 	return minServer;
 }
 
@@ -109,7 +95,7 @@ Status StatusServiceImpl::Login(ServerContext* context, const LoginReq* request,
 	auto uid = request->uid();
 	auto token = request->token();
 
-	/*std::string uid_str = std::to_string(uid);
+	std::string uid_str = std::to_string(uid);
 	std::string token_key = USERTOKENPREFIX + uid_str;
 	std::string token_value = "";
 	bool success = RedisMgr::GetInstance()->Get(token_key, token_value);
@@ -121,19 +107,8 @@ Status StatusServiceImpl::Login(ServerContext* context, const LoginReq* request,
 	if (token_value != token) {
 		reply->set_error(ErrorCodes::TokenInvalid);
 		return Status::OK;
-	}*/
-
-	std::lock_guard<std::mutex> guard(_token_mtx);
-	auto iter = _tokens.find(uid);
-	if (iter == _tokens.end()) {
-		reply->set_error(ErrorCodes::UidInvalid);
-		return Status::OK;
 	}
-	if (iter->second != token) {
-		reply->set_error(ErrorCodes::TokenInvalid);
-		return Status::OK;
-	}
-
+	
 	reply->set_error(ErrorCodes::Success);
 	reply->set_uid(uid);
 	reply->set_token(token);
@@ -142,11 +117,8 @@ Status StatusServiceImpl::Login(ServerContext* context, const LoginReq* request,
 
 void StatusServiceImpl::insertToken(int uid, std::string token)
 {
-	std::lock_guard<std::mutex> guard(_token_mtx);
-	_tokens[uid] = token;
-
-	/*std::string uid_str = std::to_string(uid);
+	std::string uid_str = std::to_string(uid);
 	std::string token_key = USERTOKENPREFIX + uid_str;
-	RedisMgr::GetInstance()->Set(token_key, token);*/
+	RedisMgr::GetInstance()->Set(token_key, token);
 }
 

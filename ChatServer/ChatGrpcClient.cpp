@@ -2,7 +2,6 @@
 #include "RedisMgr.h"
 #include "ConfigMgr.h"
 #include "UserMgr.h"
-
 #include "CSession.h"
 #include "MysqlMgr.h"
 
@@ -24,9 +23,9 @@ ChatGrpcClient::ChatGrpcClient()
 		if (cfg[word]["Name"].empty()) {
 			continue;
 		}
-		_pools[cfg[word]["Name"]] = std::make_unique<ChatConPool>(5, cfg[word]["Host"], cfg[word]["Port"]);
+		_pools[cfg[word]["Name"]] = 
+			std::make_unique<ChatConPool>(5, cfg[word]["Host"], cfg[word]["Port"]);
 	}
-
 }
 
 AddFriendRsp ChatGrpcClient::NotifyAddFriend(std::string server_ip, const AddFriendReq& req)
@@ -103,7 +102,6 @@ bool ChatGrpcClient::GetBaseInfo(std::string base_key, int uid, std::shared_ptr<
 		redis_root["icon"] = userinfo->icon;
 		RedisMgr::GetInstance()->Set(base_key, redis_root.toStyledString());
 	}
-
 }
 
 AuthFriendRsp ChatGrpcClient::NotifyAuthFriend(std::string server_ip, const AuthFriendReq& req) {

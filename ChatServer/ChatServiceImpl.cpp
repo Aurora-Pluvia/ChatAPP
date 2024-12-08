@@ -7,8 +7,7 @@
 #include "RedisMgr.h"
 #include "MysqlMgr.h"
 
-ChatServiceImpl::ChatServiceImpl()
-{
+ChatServiceImpl::ChatServiceImpl() {
 
 }
 

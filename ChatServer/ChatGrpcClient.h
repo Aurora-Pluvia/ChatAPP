@@ -6,7 +6,6 @@
 #include "message.grpc.pb.h"
 #include "message.pb.h"
 #include <queue>
-#include "const.h"
 #include "data.h"
 #include <json/json.h>
 #include <json/value.h>
@@ -31,13 +30,13 @@ using message::TextChatMsgReq;
 using message::TextChatMsgRsp;
 using message::TextChatData;
 
-
+//连接池
 class ChatConPool {
 public:
 	ChatConPool(size_t poolSize, std::string host, std::string port)
 		: poolSize_(poolSize), host_(host), port_(port), b_stop_(false) {
+		//根据连接池大小，创建连接并放入连接池
 		for (size_t i = 0; i < poolSize_; ++i) {
-
 			std::shared_ptr<Channel> channel = grpc::CreateChannel(host + ":" + port,
 				grpc::InsecureChannelCredentials());
 
@@ -85,13 +84,13 @@ public:
 	}
 
 private:
-	atomic<bool> b_stop_;
-	size_t poolSize_;
-	std::string host_;
-	std::string port_;
-	std::queue<std::unique_ptr<ChatService::Stub> > connections_;
+	atomic<bool> b_stop_;//是否停止
+	size_t poolSize_;//池子大小
+	std::string host_;//对端地址
+	std::string port_;//对端端口
+	std::queue<std::unique_ptr<ChatService::Stub>> connections_;//存储连接的队列
 	std::mutex mutex_;
-	std::condition_variable cond_;
+	std::condition_variable cond_;//条件变量
 };
 
 class ChatGrpcClient :public Singleton<ChatGrpcClient>
@@ -105,7 +104,8 @@ public:
 	AddFriendRsp NotifyAddFriend(std::string server_ip, const AddFriendReq& req);
 	AuthFriendRsp NotifyAuthFriend(std::string server_ip, const AuthFriendReq& req);
 	bool GetBaseInfo(std::string base_key, int uid, std::shared_ptr<UserInfo>& userinfo);
-	TextChatMsgRsp NotifyTextChatMsg(std::string server_ip, const TextChatMsgReq& req, const Json::Value& rtvalue);
+	TextChatMsgRsp NotifyTextChatMsg(std::string server_ip, const TextChatMsgReq& req, 
+		const Json::Value& rtvalue);
 private:
 	ChatGrpcClient();
 	unordered_map<std::string, std::unique_ptr<ChatConPool>> _pools;	
