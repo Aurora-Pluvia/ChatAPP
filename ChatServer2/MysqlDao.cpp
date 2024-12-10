@@ -179,7 +179,8 @@ bool MysqlDao::AddFriendApply(const int& from, const int& to)
 
 	try {
 		// ×¼±¸SQLÓï¾ä
-		std::unique_ptr<sql::PreparedStatement> pstmt(con->_con->prepareStatement("INSERT INTO friend_apply (from_uid, to_uid) values (?,?) "
+		std::unique_ptr<sql::PreparedStatement> pstmt(con->_con->prepareStatement(
+			"INSERT INTO friend_apply (from_uid, to_uid) values (?,?) "
 			"ON DUPLICATE KEY UPDATE from_uid = from_uid, to_uid = to_uid"));
 		pstmt->setInt(1, from); // from id
 		pstmt->setInt(2, to);

@@ -2,6 +2,8 @@
 #define CHATPAGE_H
 
 #include <QWidget>
+#include "userdata.h"
+
 /******************************************************************************
  *
  * @file       chatpage.h
@@ -22,6 +24,9 @@ class ChatPage : public QWidget
 public:
     explicit ChatPage(QWidget *parent = nullptr);
     ~ChatPage();
+	void SetUserInfo(std::shared_ptr<UserInfo> user_info);
+	void AppendChatMsg(std::shared_ptr<TextChatData> msg);
+
 protected:
     void paintEvent(QPaintEvent* event);//绘制样式
 private slots:
@@ -29,6 +34,8 @@ private slots:
 
 private:
     Ui::ChatPage *ui;
+	std::shared_ptr<UserInfo> _user_info;
+
 };
 
 #endif // CHATPAGE_H

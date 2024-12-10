@@ -11,18 +11,19 @@ ChatUserWid::~ChatUserWid()
     delete ui;
 }
 
-void ChatUserWid::SetInfo(QString name, QString head, QString msg) {
-    _name = name;
-    _head = head;
-    _msg = msg;
+void ChatUserWid::SetInfo(std::shared_ptr<UserInfo> user_info) {
+	_user_info = user_info;
+	// 加载图片
+	QPixmap pixmap(_user_info->_icon);
 
-    //加载图片
-    QPixmap pixmap(_head);
+	// 设置图片自动缩放
+	ui->icon_lb->setPixmap(pixmap.scaled(ui->icon_lb->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	ui->icon_lb->setScaledContents(true);
 
-    //设置图片自动缩放
-    ui->icon_lb->setPixmap(pixmap.scaled(ui->icon_lb->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-    ui->icon_lb->setScaledContents(true);
+	ui->user_name_lb->setText(_user_info->_name);
+	ui->user_chat_lb->setText(_user_info->_last_msg);
+}
 
-    ui->user_name_lb->setText(_name);
-    ui->user_chat_lb->setText(_msg);
+std::shared_ptr<UserInfo> ChatUserWid::GetUserInfo() {
+	return _user_info;
 }

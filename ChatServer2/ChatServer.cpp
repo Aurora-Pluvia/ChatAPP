@@ -25,7 +25,6 @@ int main() {
 		RedisMgr::GetInstance()->HSet(LOGIN_COUNT, server_name, "0");
 
 		//定义一个GrpcServer
-
 		std::string server_address(cfg["SelfServer"]["Host"] + ":" + cfg["SelfServer"]["RPCPort"]);
 		ChatServiceImpl service;
 		grpc::ServerBuilder builder;

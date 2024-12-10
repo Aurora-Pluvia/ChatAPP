@@ -36,7 +36,7 @@ private:
 	QMap<RegId, std::function<void(RegId id, int len, QByteArray data)>> _handlers;
 public slots:
 	void slot_tcp_connect(ServerInfo);
-    void slot_send_data(RegId reqId, QString data);
+    void slot_send_data(RegId reqId, QByteArray dataBytes);
 signals:
 	void sig_con_success(bool bsuccess);
 	void sig_send_data(RegId reqId, QByteArray data);

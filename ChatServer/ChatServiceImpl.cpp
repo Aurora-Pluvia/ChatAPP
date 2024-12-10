@@ -44,8 +44,8 @@ Status ChatServiceImpl::NotifyAddFriend(ServerContext* context, const AddFriendR
 	return Status::OK;
 }
 
-Status ChatServiceImpl::NotifyAuthFriend(ServerContext* context, const AuthFriendReq* request,
-	AuthFriendRsp* reply) {
+Status ChatServiceImpl::NotifyAuthFriend(ServerContext* context, 
+	const AuthFriendReq* request, AuthFriendRsp* reply) {
 	//查找用户是否在本服务器
 	auto touid = request->touid();
 	auto fromuid = request->fromuid();
@@ -63,7 +63,7 @@ Status ChatServiceImpl::NotifyAuthFriend(ServerContext* context, const AuthFrien
 	}
 
 	//在内存中则直接发送通知对方
-	Json::Value  rtvalue;
+	Json::Value rtvalue;
 	rtvalue["error"] = ErrorCodes::Success;
 	rtvalue["fromuid"] = request->fromuid();
 	rtvalue["touid"] = request->touid();

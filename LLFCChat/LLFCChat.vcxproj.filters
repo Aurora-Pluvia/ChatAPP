@@ -161,8 +161,14 @@
     <ClCompile Include="applyfrienditem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="findfaildlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="applyfriendlist.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="authenfriend.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +252,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="applyfrienditem.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="findfaildlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="authenfriend.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -356,8 +368,14 @@
     <QtMoc Include="applyfrienditem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="findfaildlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="applyfriendlist.h">
-      <Filter>Generated Files</Filter>
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="authenfriend.h">
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

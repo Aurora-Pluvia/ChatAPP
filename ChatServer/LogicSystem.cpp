@@ -73,7 +73,7 @@ void LogicSystem::RegisterCallBacks() {
 	_fun_callbacks[MSG_CHAT_LOGIN] = std::bind(&LogicSystem::LoginHandler, this,
 		placeholders::_1, placeholders::_2, placeholders::_3);
 
-	/*_fun_callbacks[ID_SEARCH_USER_REQ] = std::bind(&LogicSystem::SearchInfo, this,
+	_fun_callbacks[ID_SEARCH_USER_REQ] = std::bind(&LogicSystem::SearchInfo, this,
 		placeholders::_1, placeholders::_2, placeholders::_3);
 
 	_fun_callbacks[ID_ADD_FRIEND_REQ] = std::bind(&LogicSystem::AddFriendApply, this,
@@ -82,7 +82,7 @@ void LogicSystem::RegisterCallBacks() {
 	_fun_callbacks[ID_AUTH_FRIEND_REQ] = std::bind(&LogicSystem::AuthFriendApply, this,
 		placeholders::_1, placeholders::_2, placeholders::_3);
 
-	_fun_callbacks[ID_TEXT_CHAT_MSG_REQ] = std::bind(&LogicSystem::DealChatTextMsg, this,
+	/*_fun_callbacks[ID_TEXT_CHAT_MSG_REQ] = std::bind(&LogicSystem::DealChatTextMsg, this,
 		placeholders::_1, placeholders::_2, placeholders::_3);*/
 	
 }
@@ -195,7 +195,7 @@ void LogicSystem::SearchInfo(std::shared_ptr<CSession> session, const short& msg
 	auto uid_str = root["uid"].asString();
 	std::cout << "user SearchInfo uid is  " << uid_str << endl;
 
-	Json::Value  rtvalue;
+	Json::Value rtvalue;
 
 	Defer defer([this, &rtvalue, session]() {
 		std::string return_str = rtvalue.toStyledString();
@@ -255,7 +255,7 @@ void LogicSystem::AddFriendApply(std::shared_ptr<CSession> session, const short&
 		auto session = UserMgr::GetInstance()->GetSession(touid);
 		if (session) {
 			//在内存中则直接发送通知对方
-			Json::Value  notify;
+			Json::Value notify;
 			notify["error"] = ErrorCodes::Success;
 			notify["applyuid"] = uid;
 			notify["name"] = applyname;
@@ -286,7 +286,6 @@ void LogicSystem::AddFriendApply(std::shared_ptr<CSession> session, const short&
 
 	//发送通知
 	ChatGrpcClient::GetInstance()->NotifyAddFriend(to_ip_value, add_req);
-
 }
 
 void LogicSystem::AuthFriendApply(std::shared_ptr<CSession> session, const short& msg_id, const string& msg_data) {
