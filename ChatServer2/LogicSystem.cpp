@@ -82,8 +82,8 @@ void LogicSystem::RegisterCallBacks() {
 	_fun_callbacks[ID_AUTH_FRIEND_REQ] = std::bind(&LogicSystem::AuthFriendApply, this,
 		placeholders::_1, placeholders::_2, placeholders::_3);
 
-	/*_fun_callbacks[ID_TEXT_CHAT_MSG_REQ] = std::bind(&LogicSystem::DealChatTextMsg, this,
-		placeholders::_1, placeholders::_2, placeholders::_3);*/
+	_fun_callbacks[ID_TEXT_CHAT_MSG_REQ] = std::bind(&LogicSystem::DealChatTextMsg, this,
+		placeholders::_1, placeholders::_2, placeholders::_3);
 	
 }
 

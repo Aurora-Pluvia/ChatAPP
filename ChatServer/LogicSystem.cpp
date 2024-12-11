@@ -82,8 +82,8 @@ void LogicSystem::RegisterCallBacks() {
 	_fun_callbacks[ID_AUTH_FRIEND_REQ] = std::bind(&LogicSystem::AuthFriendApply, this,
 		placeholders::_1, placeholders::_2, placeholders::_3);
 
-	/*_fun_callbacks[ID_TEXT_CHAT_MSG_REQ] = std::bind(&LogicSystem::DealChatTextMsg, this,
-		placeholders::_1, placeholders::_2, placeholders::_3);*/
+	_fun_callbacks[ID_TEXT_CHAT_MSG_REQ] = std::bind(&LogicSystem::DealChatTextMsg, this,
+		placeholders::_1, placeholders::_2, placeholders::_3);
 	
 }
 
@@ -384,9 +384,9 @@ void LogicSystem::DealChatTextMsg(std::shared_ptr<CSession> session, const short
 	auto uid = root["fromuid"].asInt();
 	auto touid = root["touid"].asInt();
 
-	const Json::Value  arrays = root["text_array"];
+	const Json::Value arrays = root["text_array"];
 
-	Json::Value  rtvalue;
+	Json::Value rtvalue;
 	rtvalue["error"] = ErrorCodes::Success;
 	rtvalue["text_array"] = arrays;
 	rtvalue["fromuid"] = uid;
@@ -434,7 +434,6 @@ void LogicSystem::DealChatTextMsg(std::shared_ptr<CSession> session, const short
 		text_msg->set_msgid(msgid);
 		text_msg->set_msgcontent(content);
 	}
-
 
 	//·¢ËÍÍ¨Öª todo...
 	ChatGrpcClient::GetInstance()->NotifyTextChatMsg(to_ip_value, text_msg_req, rtvalue);

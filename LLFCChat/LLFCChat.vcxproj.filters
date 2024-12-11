@@ -170,6 +170,9 @@
     <ClCompile Include="authenfriend.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="friendinfopage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h">
@@ -258,6 +261,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="authenfriend.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="friendinfopage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -375,6 +381,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="authenfriend.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="friendinfopage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
